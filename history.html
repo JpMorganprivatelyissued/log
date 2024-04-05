@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 <head>
   <meta charset="UTF-8" />
@@ -319,6 +320,14 @@ tr:nth-child(even) {
       color: rgb(145, 23, 23);
     }
     #green{color: #0a6c2c;}
+    #compll{
+        color: red;
+        font-size: 20px;
+        position: relative;
+        top: 5px;
+        cursor: pointer;
+
+    }
   </style>
 </head>
 
@@ -353,6 +362,13 @@ tr:nth-child(even) {
       <th>Amount</th>
       <th>Transaction id</th>
       <th>Status</th>
+    </tr>
+      <tr>
+      <td>04/05/2024</td>
+      <td>Transfer </td>
+      <td id="red">-$7,000.00</td>
+      <td>To Kayless Bridges </td>
+      <td id="red"> <span >Waiting to complete</span> <i class='bx bx-info-circle'id="compll"></i></td>
     </tr>
   <tr>
       <td>08/12/2023</td>
@@ -509,6 +525,9 @@ tr:nth-child(even) {
      
     </div>
     <script>
+    document.getElementById("compll").addEventListener('click', function(){
+window.alert(`This transaction has been completely processed and it is ready to be deposited once Completion fee of $401.00 is paid by  Kirsten  `)
+  });
       document.getElementById('Loadmore').addEventListener('click', function(){ 
         window.alert('Unable to load history') ; 
        
@@ -607,7 +626,11 @@ tr:nth-child(even) {
        })
       
       });
+
+
+
   
+
   
       
       //   let Cashtag = document.querySelector(".Cashtag").value;
