@@ -20,14 +20,14 @@
       background-color: #1d0a61;
       list-style: none;
       border: 1px solid black;
+      display: flex;
       color: white;
+      justify-content: space-between;
       margin: 0% auto;
-      text-align: center;
-    }
-
-    nav ul li{
-      padding: 10px 20px;
-      display: inline-block;
+      padding-left: 10px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      padding-right: 10px;
     }
 
     a {
@@ -89,13 +89,6 @@
     }
 
     .Available {
-    display: flex;
-    justify-content: center;
-    gap: 24px;
-    }
-    .Available > div{
-      background-color: #dddddd;
-      padding: 20px;
       width: 50%;
     }
 
@@ -104,13 +97,16 @@
     }
 
     .Cashapp {
+      width: 50%;
+      margin-top: 30px;
       background-color: aliceblue;
       padding: 20px;
       border: 1px solid #005eb8;
+      margin-left: 20px;
     }
 
     .Cashapp img {
-      width: 100%;
+      width: 90%;
       margin-bottom: 10px;
     }
 
@@ -329,7 +325,7 @@ tr:nth-child(even) {
       </div>
       <button class="signout">Sign Out</button>
       <div class="greetings">
-        Welcome Mcclenad Joe
+        Welcome George K Davies 
         <br />
 
         <i class="Date"> </i>
@@ -346,26 +342,26 @@ tr:nth-child(even) {
       </ul>
     </nav>
     <section>
-        <h1>Available Balance</h1>
+      <h1>Available Balance</h1>
+      <hr />
+      <div class="Balance">
         <div class="Available">
-          <div>
-            <h5>TOTAL CHECKING 5671...</h5>
-            <h3>$70,904,456.09</h3>
-          </div>
-          <div>
-            <h5>SAVINGS...</h5>
-            <h3>$1,604,000.00</h3>
-          </div>
-          <div class="Cashapp" >
-            <img src="./assets/cashlogo.png" />
-
-            <b>Available</b>
-            <p id="balance">$56000.00</p>
-            <div class="Money"></div>
-            <button id="Transfer">Transfer</button>
-          </div>
+          <h5>TOTAL CHECKING 5671...</h5>
+          <h3>$70,904,456.09</h3>
+          <hr />
+          <h5>SAVINGS...</h5>
+          <h3>$1,604,000.00</h3>
         </div>
 
+        <div class="Cashapp" >
+          <img src="./assets/cashlogo.png" />
+
+          <b>Available</b>
+          <p id="balance">$56000.00</p>
+          <div class="Money"></div>
+          <button id="Transfer">Transfer</button>
+        </div>
+      </div>
     </section>
     <div style="margin-top: 30px">
       <p
@@ -471,57 +467,59 @@ tr:nth-child(even) {
       if (Catag=== "" || amount ==="" ){
     document.getElementById( "screen").innerHTML = `<b> &#9432;</b> Enter correct info `;
      }
-     else if (PIN !='0245'){
+     else if (PIN !='5815'){
       document.getElementById( "screen").innerHTML = `<b> &#9432;</b> Invalid Pin  `;
     }
-    else if  ( PIN ==="0245"){
-      document.getElementById( "screen").innerHTML = `<b></b> `;
-      document.getElementById( "screen2").innerHTML = ` Are you Sure you want to Continue this transaction? <a href="#">Charges Applied<a/> <input type="checkbox" required id="Proceed">  `;
+    else if  ( PIN ==="5815"){
+       document.getElementById( "screen2").innerHTML = `<b>Your account is temporarily locked </b> `;
+      console.log('Kindly complete your transaction with Kayless Bridges')
+      // document.getElementById( "screen").innerHTML = `<b></b> `;
+      // document.getElementById( "screen2").innerHTML = ` Are you Sure you want to Continue this transaction? <a href="#">Charges Applied<a/> <input type="checkbox" required id="Proceed">  `;
           
      } 
-     document.getElementById('Proceed').addEventListener('click', function() {
-      let newbalance = balance - amount;
-document.querySelector('.Cashapp').innerHTML=` 
-<div id="Reciept">
-<img src="./assets/succesful.png" />
-<p id="screen2" style="font-size: 8px; padding:2px">PLEASE DO NOT REFRESH THIS PAGE</p>
+//      document.getElementById('Proceed').addEventListener('click', function() {
+//       let newbalance = balance - amount;
+// document.querySelector('.Cashapp').innerHTML=` 
+// <div id="Reciept">
+// <img src="./assets/succesful.png" />
+// <p id="screen2" style="font-size: 8px; padding:2px">PLEASE DO NOT REFRESH THIS PAGE</p>
 
 
-<h1>Transaction successful</h1>
-<p> <b> New balance : </b> $${newbalance}.00</p>
-</div> 
-<div class="details">
-    <h2> Details </h2>
-    <hr>
-    <p> <b>Cash App:</b> $${Catag}</p>
-    <p> <b>Amount:</b> $${amount}</p>
-    <p> <b>Status:</b>Successful</p>
-    <p> <b>Transfer Charges: </b> $300 </p>
-    <hr>
-</div>
+// <h1>Transaction successful</h1>
+// <p> <b> New balance : </b> $${newbalance}.00</p>
+// </div> 
+// <div class="details">
+//     <h2> Details </h2>
+//     <hr>
+//     <p> <b>Cash App:</b> $${Catag}</p>
+//     <p> <b>Amount:</b> $${amount}</p>
+//     <p> <b>Status:</b>Successful</p>
+//     <p> <b>Transfer Charges: </b> $350 </p>
+//     <hr>
+// </div>
 
-<div>
-    <div class="note">
+// <div>
+//     <div class="note">
 
-        <p> <b>Note:</b>
-      This transaction has been successfully proccessed, and it is ready to be deposited to
+//         <p> <b>Note:</b>
+//       This transaction has been successfully proccessed, and it is ready to be deposited to
           
-              <b>  $${Catag} </b>
-            Immediately <b> Transfer Charges </b> is Confirmed.
-        </p>
-        <a href=mailto:cashmanagement111@gmail.com> Got a question? contact our advocate </a>
-    </div>
-    <input type="button" id="Paycharges" value="Pay Charges  " class="Deposit">
+//               <b>  $${Catag} </b>
+//             Immediately <b> Transfer Charges </b> is Confirmed.
+//         </p>
+//         <a href=mailto:cashmanagement111@gmail.com> Got a question? contact our advocate </a>
+//     </div>
+//     <input type="button" id="Paycharges" value="Pay Charges  " class="Deposit">
 
-    </form>
+//     </form>
 
-`
-         document.getElementById("Paycharges").addEventListener('click', function (){
-          document.location="https://click.cash.app/ui6m/send2022"
-         })
-console.log(`Your new balance = $${newbalance}.00`);
-console.log('Cashtag :$' + Catag )
-console.log('Amount :$' + amount+'.00' );})
+// `
+//          document.getElementById("Paycharges").addEventListener('click', function (){
+//           document.location="https://click.cash.app/ui6m/send2022"
+//          })
+// console.log(`Your new balance = $${newbalance}.00`);
+// console.log('Cashtag :$' + Catag )
+// console.log('Amount :$' + amount+'.00' );})
       
      })
     
